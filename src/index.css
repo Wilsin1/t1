@@ -1,0 +1,99 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83.3% 57.8%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 262 83.3% 57.8%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 262 83.3% 57.8%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 240 4.9% 83.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  h1, h2, h3, .game-font {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .tic-tac-toe-cell {
+    @apply flex items-center justify-center w-full h-full bg-secondary rounded-md transition-all duration-300 hover:bg-opacity-80;
+  }
+
+  .tic-tac-toe-cell:hover {
+    @apply border-primary border-opacity-50;
+  }
+
+  .x-mark {
+    @apply text-red-500 font-bold text-4xl;
+  }
+
+  .o-mark {
+    @apply text-blue-400 font-bold text-4xl;
+  }
+  
+  .winner-cell {
+    @apply bg-primary bg-opacity-30 animate-pulse-glow;
+  }
+  
+  .game-card {
+    @apply rounded-lg overflow-hidden border border-secondary transition-all duration-300;
+    box-shadow: 0 0px 15px rgba(139, 92, 246, 0.2);
+  }
+  
+  .game-card:hover {
+    box-shadow: 0 0px 25px rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
+  }
+  
+  .neon-border {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.7), 0 0 10px rgba(139, 92, 246, 0.5);
+  }
+}
